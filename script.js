@@ -81,19 +81,12 @@ function playGame(){
         
     };
 
-    let rounds = 5;
-    for(let i = 1; i <= rounds;i++){
-        console.log("Roun: " + i);
-
-        const humanSelection = getHumanChoice();
-        const compterSeletion = getComputerChoice();
-        playRound(humanSelection,compterSeletion);
     
-    }
     console.log('Your Score: ' + humanScore + " <****> " + "Robot score: " + computerScore );
      
 
 };
 playGame();
+
 
 

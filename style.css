@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Karmatic';
+    src: url('Fonts/ka1.ttf') format('truetype');
+    
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body{
+    background-color: #494D5F;
+
+}
+.hdr{
+    background-color: #0d0d0d;
+}
+.hdr h1{
+    font-family: 'Karmatic',sans-serif;
+    font-size: 42px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14;
+    
+}
+
+
+
+.container h2{
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+   color:thistle;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   text-shadow: 0 0 20px #141a14;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+
+.man img{
+    width: 70px;
+    height: 80px;
+}
+.man h3{
+    margin-left: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.pc img{
+    width: 70px;
+    height: 80px;
+}
+.pc h3{
+    margin-left: 22px;
+    font-weight: bold;
+    
+}
