@@ -126,8 +126,24 @@ getHumanChoice();
 
 
 
-
-
-
-
 // handling computer choice
+// should work only when user press a button
+
+function getComputerChoice(){
+    
+    let choice = Math.floor(Math.random() * 3 + 1);
+    switch (choice) {
+        case 1: // rock
+            pcPic.src = rockImg.src;
+            break;
+        case 2: // paper
+            pcPic.src = paperImg.src;
+            break;
+        case 3: // scissors
+            pcPic.src = sciImg.src;
+            break;
+        default:
+            'error';
+     }
+};
+getComputerChoice();
