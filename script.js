@@ -113,20 +113,22 @@ const sciImg = document.querySelector(".scissors img");
 function getHumanChoice(callbac){
     rock.addEventListener("click",() => {
         manPic.src = rockImg.src;
-        callbac();
+        callbac('rock');
     });
     
     paper.addEventListener("click", () =>{
         manPic.src = paperImg.src;
-        callbac();
+        callbac('paper');
     });
     
     scissors.addEventListener("click",() =>{
         manPic.src = sciImg.src;
-        callbac();
+        callbac('scissors');
     });
     
 };
+
+
 // handling computer choice
 // should work only when user press a button
 function getComputerChoice(){
@@ -135,20 +137,69 @@ function getComputerChoice(){
     switch (choice) {
         case 1: // rock
             pcPic.src = rockImg.src;
-            break;
+            return 'rock';
         case 2: // paper
             pcPic.src = paperImg.src;
-            break;
+            return 'paper'
         case 3: // scissors
             pcPic.src = sciImg.src;
-            break;
+            return 'scissors'
         default:
             'error';
     }  
 };
 
-getHumanChoice(getComputerChoice);
 
-const list = document.querySelector("ul");
-const listItem = document.createElement("li");
+const Hlist = document.querySelector("#hl");
+const Clist = document.querySelector("#cl");
 
+
+
+function playGame(){
+    
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice , computerChoice){
+
+        // if(humanChoice == computerChoice){
+        //     console.log('Your choice: ' + humanChoice + ' '+ 
+        //                 'Copmuter choice: ' + computerChoice
+        //     );
+        //     console.log('We have Draw!');
+        //     humanScore++;
+        //     computerScore++;
+        // }
+
+        if(humanChoice == 'rock' && computerChoice   // <=== else
+            == 'paper'|| computerChoice == 'scissors')
+        {
+            humanScore++;
+        }
+
+        else if(computerChoice == 'rock' && humanScore
+            == 'paper'|| humanChoice == 'scissors')
+        {
+            computerScore++;
+        }
+
+        else if(humanChoice == 'paper' && computerChoice
+            == 'scissors' || computerChoice == 'rock')
+        {
+            computerScore++;
+        }
+
+        else if( humanChoice == 'scissors' && computerChoice
+            == 'paper' || computerChoice != 'rock')
+        {
+            humanScore++;
+        }
+        
+    };
+    
+    const rounds = 5;
+    
+    
+
+};
