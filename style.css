@@ -66,10 +66,8 @@ body{
 }
 
 .score{
-    width: 210px;
+    width: 220px;
     height: 150px;
-    border: 5px solid black;
-    box-shadow:0 0 20px rgba(169, 214, 169, 0.667);
 }
 
 .score h3{
@@ -80,6 +78,32 @@ body{
     font-size: large;
     font-weight:bolder;
 }
+
+.total{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+.hscore h3{
+    padding-right: 60px;
+}
+.hscore li{
+    list-style: none;
+    padding-left: 90px;
+    padding-top: 15px;
+    font-size: 40px;
+}
+
+.cscore h3{
+    padding-left: 60px;
+}
+.cscore li{
+    list-style: none;
+    padding-left: 90px;
+    padding-top: 15px;
+    font-size: 40px;
+}
+
 
 
 .pc{

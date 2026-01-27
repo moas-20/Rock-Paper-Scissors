@@ -88,14 +88,16 @@
 // };
 // playGame();
 
+// <<<<<<<<<<<<<<<<<<<<<<<<<<<<            >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 
 // select elements that we need
-const list = document.querySelector("ul");
 // pc & player img
 const manPic = document.querySelector("#manPic");
 const pcPic = document.querySelector("#pcPic");
 //score
-const score = document.querySelector(".score");
+const Hscore = document.querySelector(".score");
+
 //buttons
 const rock = document.querySelector(".rock button");
 const paper = document.querySelector(".paper button");
@@ -108,27 +110,25 @@ const sciImg = document.querySelector(".scissors img");
 
 // handling user choice
 
-
-function getHumanChoice(){
+function getHumanChoice(callbac){
     rock.addEventListener("click",() => {
         manPic.src = rockImg.src;
+        callbac();
     });
     
     paper.addEventListener("click", () =>{
         manPic.src = paperImg.src;
+        callbac();
     });
     
     scissors.addEventListener("click",() =>{
         manPic.src = sciImg.src;
+        callbac();
     });
+    
 };
-getHumanChoice();
-
-
-
 // handling computer choice
 // should work only when user press a button
-
 function getComputerChoice(){
     
     let choice = Math.floor(Math.random() * 3 + 1);
@@ -144,6 +144,11 @@ function getComputerChoice(){
             break;
         default:
             'error';
-     }
+    }  
 };
-getComputerChoice();
+
+getHumanChoice(getComputerChoice);
+
+const list = document.querySelector("ul");
+const listItem = document.createElement("li");
+
