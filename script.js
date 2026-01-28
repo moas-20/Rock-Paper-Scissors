@@ -16,6 +16,14 @@ const scissors = document.querySelector(".scissors button");
 const rockImg = document.querySelector(".rock img");
 const paperImg = document.querySelector(".paper img");
 const sciImg = document.querySelector(".scissors img");
+//divs
+const rockDiv = document.querySelector(".rock");
+const paperDiv = document.querySelector(".paper");
+const scissorsDiv = document.querySelector(".scissors");
+const playContainer = document.querySelector(".play");
+;
+//the header
+const header = document.querySelector("h2");
 
 
 // handling user choice
@@ -55,7 +63,7 @@ function getComputerChoice(){
             pcPic.src = sciImg.src;
             return 'scissors'
         default:
-            'error';
+            'error';document.Hlist.style.color = 'green';
     }  
 };
 
@@ -74,12 +82,13 @@ function playGame(){
 
 
     function playRound(humanChoice){
+    
         if (rounds < 5) {
             const computerChoice = getComputerChoice();
-            if(humanChoice == computerChoice){
+            if(humanChoice === computerChoice){
 
-                humanScore++;
-                computerScore++;
+                humanScore;
+                computerScore;
             } 
     
             if((humanChoice === 'rock' && computerChoice === 'scissors') ||
@@ -101,8 +110,38 @@ function playGame(){
             
             
         };
+        if (rounds == 5) {
+            
+            rockDiv.style.visibility = 'hidden';
+            paperDiv.style.visibility = 'hidden';
+            scissorsDiv.style.visibility = 'hidden';
+
+            //creat button for repalay
+            const btn = document.createElement("button");
+            btn.textContent = "Play";
+            btn.style.fontSize = "bold";
+            btn.style.backgroundColor = "#3882F6";
+            btn.style.width = "30px";
+            btn.style.height = "50px";
+
+            playContainer.appendChild(btn);
+            btn.addEventListener("click", () =>{
+                location.reload();
+            })
+
+            // Ending Game
+            if(humanScore > computerScore){
+                header.textContent = "Winner Winner";
+                header.style.color = 'green'
+
+            }
+            else {
+                header.textContent = "You Lost";
+                header.style.color = 'red'
+            }
+
+        }
     }
     getHumanChoice(playRound);
-  
 };
 playGame();
