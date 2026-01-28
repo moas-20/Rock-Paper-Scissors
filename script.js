@@ -87,8 +87,8 @@ function playGame(){
             const computerChoice = getComputerChoice();
             if(humanChoice === computerChoice){
 
-                humanScore;
-                computerScore;
+                humanScore++;
+                
             } 
     
             if((humanChoice === 'rock' && computerChoice === 'scissors') ||
